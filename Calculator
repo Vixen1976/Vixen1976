@@ -2,21 +2,30 @@ import java.util.Scanner;
 
 public class EXERCISE_2 {
     public static void main(String[] args) {
-       
+        /* CALCULATOR | Exercise 2
+         *
+         * Create a Calculator similar to the first exercise!
+         * However, this time use at least two custom methods (one for evaluating the operation and one for continuing)!
+         *
+         * Additionally, make sure if a Dividing by 0 would happen, you catch that and just return a 0 instead!
+         *
+         */
 
         Scanner scanner = new Scanner(System.in);
 
         while(true){
 
             System.out.println("First Number");
-            int a = scanner.nextInt();
+            float a = scanner.nextFloat();
 
             System.out.println("Second Number");
-            int b = scanner.nextInt();
+            float b = scanner.nextFloat();
 
             scanner.nextLine();
             System.out.println("Type in plus or +, minus or -, divide or /, multiply or *");
             String symbol = scanner.nextLine();
+
+
 
             boolean divideZero = false;
             if (a == 0 || b == 0) {
@@ -46,19 +55,19 @@ public class EXERCISE_2 {
 
     }
 
-    private static void Evaluation(String symbol, int a, int b) {
+    private static void Evaluation(String symbol, float a, float b) {
         switch (symbol) {
-            case "minus", "-" -> {int answer = a - b; System.out.println("Answer: " + answer);
+            case "minus", "-" -> {float answer = a - b; System.out.println("Answer: " + answer);
             }
-            case "plus", "+" -> {int answer = a + b; System.out.println("Answer: " + answer);
+            case "plus", "+" -> {float answer = a + b; System.out.println("Answer: " + answer);
             }
             case "divide", "/" -> {if(a == 0 || b == 0) {
-                int answer = 0; System.out.println("Answer: " + answer);
+                String answerZero = "Can't divide 0"; System.out.println(answerZero);
             } else {
-                int answer = a / b; System.out.println("Answer: " + answer);
+                float answer = a / b; System.out.println("Answer: " + answer);
             }
             }
-            case "multiply", "*" -> {int answer = a * b; System.out.println("Answer: " + answer);
+            case "multiply", "*" -> {float answer = a * b; System.out.println("Answer: " + answer);
             }
 
 
@@ -67,4 +76,3 @@ public class EXERCISE_2 {
     }
 
 }
-
